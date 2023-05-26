@@ -50,3 +50,10 @@
   background-color: green;
   color: white;
 }
+
+.label-yellow {
+  background-color: yellow;
+  color: black;
+  border: violet;
+  border-radius: 3px;
+}
