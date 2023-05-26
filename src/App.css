@@ -57,3 +57,8 @@
   border: violet;
   border-radius: 3px;
 }
+
+.cargando {
+  background-color: burlywood;
+  color: black;
+}
