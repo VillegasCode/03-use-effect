@@ -16,9 +16,9 @@ const getUsuariosEstaticos = () => {
 }
 
 //Apenas se cargue la página va a llamar a la función getUsuariosEstativos()
-useEffect(() => {
-    getUsuariosEstaticos();
-}, []);
+// useEffect(() => {
+//     getUsuariosEstaticos();
+// }, []);
 
 
 //Obtenemos el listado de los usuarios desde un API externo
@@ -37,7 +37,10 @@ const getUsuariosAjaxPms = () => {
     );
 }
 
-
+//Apenas se cargue la página va a llamar a la función getUsuariosAjaxPms()
+useEffect(() => {
+    getUsuariosAjaxPms();
+}, []);
 
   return (
     <div>
@@ -47,7 +50,7 @@ const getUsuariosAjaxPms = () => {
                 // Recorrer el array usuarios con .map y mostrarlos dentro de un <li>
                 usuarios.map(usuario => {
                     console.log(usuario);
-                    return <li key={usuario.id}>{usuario.first_name} {usuario.last_name}</li>
+                    return <li key={usuario.id}>{usuario.first_name} {usuario.last_name}</li>;
                 })
             }
         </ol>
