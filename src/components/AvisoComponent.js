@@ -5,7 +5,9 @@ export const AvisoComponent = () => {
     <div>
         <hr />
         <h3>Hemos superado los 20 cambios</h3>
-        <button>Mostrar Alerta</button>
+        <button onClick={e => {
+            alert("Bienvenido!")
+        }}>Mostrar Alerta</button>
     </div>
   )
 }
