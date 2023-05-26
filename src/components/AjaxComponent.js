@@ -20,6 +20,25 @@ useEffect(() => {
     getUsuariosEstaticos();
 }, []);
 
+
+//Obtenemos el listado de los usuarios desde un API externo
+const getUsuariosAjaxPms = () => {
+    //Dirección del API
+    fetch("https://reqres.in/api/users?page=1")
+    .then(respuesta => respuesta.json())
+    .then (
+        resultado_final => {
+            setUsuarios(resultado_final.data);
+            console.log(usuarios)
+        },
+        error => {
+            console.log(error);
+        }
+    );
+}
+
+
+
   return (
     <div>
         <h3>Listado de Usuarios vía AJAX</h3>
