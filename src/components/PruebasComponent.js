@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { AvisoComponent } from './AvisoComponent';
 
 export const PruebasComponent = () => {
   
@@ -46,6 +47,8 @@ export const PruebasComponent = () => {
             <button onClick={cambiarFecha}>Cambiar Fecha</button>
         </p>
 
+        //Condicional Ternaria, si se cumple la condición se carga el componente
+        {contador > 20 && <AvisoComponent />}
     </div>
   )
 }
