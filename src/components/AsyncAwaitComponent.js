@@ -28,7 +28,10 @@ export const AsyncAwaitComponent = () => {
             {
                 usuariosAW.map(usuarioAW => {
                     console.log(usuarioAW);
-                    return <li key={usuarioAW.id}>{usuarioAW.first_name} {usuarioAW.last_name}</li>
+                    return <li key={usuarioAW.id}>
+                                        <img src={usuarioAW.avatar} width="40px" />
+                                        &nbsp;
+                                        {usuarioAW.first_name} {usuarioAW.last_name}</li>
                 })
             }
         </ol>
