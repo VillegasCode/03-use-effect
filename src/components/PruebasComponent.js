@@ -15,23 +15,27 @@ export const PruebasComponent = () => {
         setFecha(new Date().toLocaleDateString());
     }
 
+    //Hook useState para crear un contador mediante desestructuración
+    const [ contador, setContador ] = useState(0);
+
     //Crear estado con useEffect y con [] como 2do parámetro solo se ejecuta 1 vez
     useEffect(() => {
         console.log("Has cargado el componente PruebasComponent!!");
     }, []);
 
 
-    //Solo se ejecuta cuando se cambia el algo en específico en este caso el USUARIO
+    //Solo se ejecuta cuando se cambia el algo en específico en este caso el [USUARIO, FECHA] porque se encuentra entre corchetes
     useEffect(() => {
-        console.log("Has modificado el usuario!!");
-    }, [usuario]);
+        setContador(contador + 1);
+        console.log("Has modificado el usuario " + contador + " veces");
+    }, [usuario, fecha]);
 
     return (
     <div>
         <h1>El Efecto - Hook useEffect</h1>
 
-        <strong className='label'>{usuario}</strong>
-        <strong>{fecha}</strong>
+        <strong className={ contador >= 10 ? 'label label-green' : 'label'}>{usuario}</strong>
+        <strong className={contador >= 4 ? 'label label-yellow' : 'label'}>{fecha}</strong>
 
         <p>
             <input type='text'
